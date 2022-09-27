@@ -9,11 +9,11 @@
  * Return: pointer to the memory block
  */
 
-char *memset(char *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
 	while (n)
 	{
-		s[n - l] = b;
+		s[n - 1] = b;
 		n--;
 	}
 	return (s);
