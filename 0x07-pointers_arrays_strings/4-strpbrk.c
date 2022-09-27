@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * _strpbrk - searches a string for any of a set of bytes
  * @s: string to check
@@ -8,7 +7,7 @@
  *
  * Return: pointer to byte in s that matches or NULL if no match
  */
-char *strpbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i, j;
 
