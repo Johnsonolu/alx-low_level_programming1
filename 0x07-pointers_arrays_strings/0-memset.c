@@ -2,7 +2,7 @@
 
 /**
  * _memset - fills a memory block with a constant byte
- * @s: adress to memory block
+ * @s: address to memory block
  * @b: char to be used
  * @n: number of bytes to be used
  *
@@ -13,7 +13,7 @@ char *memset(char *s, char b, unsigned int n)
 {
 	while (n)
 	{
-		s[n - l] = b;
+		s[n - 1] = b;
 		n--;
 	}
 	return (s);
