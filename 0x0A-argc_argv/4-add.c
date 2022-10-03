@@ -1,70 +1,33 @@
 #include <stdio.h>
-#include <stdlid.h>
+#include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 /**
- * check_num - check - string there are legit
- * @str: arr str
+ * main - adds numbers
+ * @argc: number of arguments passed to the function
+ * @argv: argument vector of pointers to strings
  *
- * Return: Always 0 (Success)
+ * Return: 0 if no errors, else 1
  */
-
-int check_num(char *str)
-
-{
-unsigned int count;
-
-count = 0;
-while (count < strlen(str))
-
-{
-if (!isdigit(str[count]))
-{
-return (0)
-}
-
-count++;
-}
-return (1);
-}
-
-/**
- * main - Print the name of the program
- * @argc: Count arguments
- * @argv: Arguments
- *
- * Return: Always 0 (Success)
- */
-
 int main(int argc, char *argv[])
-
 {
+	int a = 0, i, j;
 
-int count;
-int str_to_int;
-int sum = 0;
-
-count = 1;
-while (count < argc)
-{
-if (check_num(argv[count]))
-
-{
-str_to_int = atoi(argv[count]);
-sum += str_to_int;
-}
-
-else
-{
-printf("Error\n");
-return (1);
-}
-
-count++;
-}
-
-printf("%d\n", sum);
-
-return (0);
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (isdigit(argv[i][j]) == 0)
+			{
+				puts("Error");
+				return (1);
+			}
+		}
+	}
+	for (i = 1; i < argc; i++)
+	{
+		a += atoi(argv[i]);
+	}
+	printf("%d\n", a);
+	return (0);
 }
